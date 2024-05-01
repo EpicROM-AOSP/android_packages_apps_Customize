@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2023-2025 EpicROM-AOSP
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/customize_dashboard_title">
+
+        <com.android.settingslib.widget.TopIntroPreference
+             android:key="customize_top_intro"
+             android:title="@string/build_tweaks_summary_title"
+             settings:searchable="false"/>
+
+        <!-- Top (Lockscreen, About, and Quick settings)-->
+         <com.android.settingslib.widget.LayoutPreference
+             android:key="interface_menu_top"
+             android:layout="@layout/interface_menu_top_layout"/>    
+
+         <PreferenceCategory
+             android:id="@+id/more_menu"
+             android:title="@string/more_menu_title">
+
+        <!-- Themes -->
+             <Preference
+                 android:key="themes_category"
+                 android:title="@string/themes_title"
+                 android:fragment="com.epic.settings.fragments.themes.Themes"
+                 android:icon="@drawable/ic_settings_themes"
+                 settings:layout="@layout/interface_card_single_unsummary" />
+
+        <!-- Status bar -->
+             <Preference
+                 android:key="statusbar_category"
+                 android:title="@string/statusbar_title"
+                 android:fragment="com.epic.settings.fragments.statusbar.StatusBar"
+                 android:icon="@drawable/ic_settings_statusbar"
+                 settings:layout="@layout/interface_card_single_unsummary" />
+
+        <!-- Notifications -->
+             <Preference
+                 android:key="notifications_category"
+                 android:title="@string/notifications_title"
+                 android:fragment="com.epic.settings.fragments.notifications.Notifications"
+                 android:icon="@drawable/ic_settings_notifications"
+                 settings:layout="@layout/interface_card_single_unsummary" />        
+
+        <!-- Buttons -->
+             <Preference
+                 android:key="buttons_category"
+                 android:title="@string/buttons_title"
+                 android:fragment="com.epic.settings.fragments.buttons.Buttons"
+                 android:icon="@drawable/ic_settings_buttons"
+                 settings:layout="@layout/interface_card_single_unsummary" />
+
+        <!-- Power menu -->
+     <Preference
+         android:key="power_menu"
+         android:title="@string/power_menu_title"
+         android:icon="@drawable/ic_settings_power_menu"
+         android:fragment="com.epic.settings.fragments.powermenu.PowerMenu"
+         settings:layout="@layout/interface_card_single_unsummary" />  
+
+        <!-- Misc -->
+        <Preference
+            android:key="misc_category"
+            android:title="@string/misc_title" 
+            android:fragment="com.epic.settings.fragments.miscellaneous.Miscellaneous"
+            android:icon="@drawable/ic_settings_misc"
+            settings:layout="@layout/interface_card_single_unsummary" />
+                     
+</PreferenceScreen>

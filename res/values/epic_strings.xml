@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023-2025
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- EpicROM Customizer -->
+    <string name="customize_dashboard_title">Epic Customize</string>
+     <string name="build_tweaks_summary_title">Can you find the Customize here?</string>
+
+    <!-- EpicROM Menu -->
+    <string name="more_menu_title">Other Menu</string>
+    <string name="about_title">About us?</string>
+    <string name="about_summary">Look here.</string>
+    <string name="lockscreen_title">Lock screen</string>
+    <string name="lockscreen_summary">Everything about look screen customization is here...</string>
+    <string name="quicksettings_title">Quick Settings</string>
+    <string name="quicksettings_summary">Customize here</string>
+    <string name="misc_title">Miscellaneous Settings</string>
+    <string name="notifications_title">Notifications Settings</string>
+    <string name="statusbar_title">Statusbar Settings</string>
+    <string name="buttons_title">Buttons Settings</string>
+    <string name="themes_title">Themes Settings</string>
+    <string name="power_menu_title">Powermenu Settings</string>
+</resources>
