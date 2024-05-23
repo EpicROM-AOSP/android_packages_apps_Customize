@@ -16,6 +16,14 @@
 
 package com.epic.customize;
 
+import android.content.ContentResolver;
+ import android.content.Context;
+ import android.content.res.Resources;
+ import android.os.Bundle;
+ 
+ import androidx.preference.Preference;
+ import androidx.preference.PreferenceScreen;
+
 import com.android.internal.logging.nano.MetricsProto;
 
 import android.app.Activity;
@@ -45,14 +53,36 @@ import com.android.settingslib.widget.LayoutPreference;
  import com.epic.settings.fragments.about.About;
  import com.epic.settings.fragments.quicksettings.QuickSettings;
  
+ import com.epic.settings.utils.DeviceUtils;
+ 
  public class CustomizeDashboard extends SettingsPreferenceFragment implements View.OnClickListener {
      private LayoutPreference mTopLayout;
+     
+     private static final String KEY_BUTTONS_PREF = "buttons";
+ 
+     private Preference mButtonsPref;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.epic_customize_menu);
     }
+    
+    @Override
+     public void onCreate(Bundle icicle) {
+         super.onCreate(icicle);
+ 
+         final Context context = getContext();
+         final ContentResolver resolver = context.getContentResolver();
+         final PreferenceScreen prefScreen = getPreferenceScreen();
+         final Resources resources = context.getResources();
+ 
+         mButtonsPref = (Preference) findPreference(KEY_BUTTONS_PREF);
+ 
+         if (DeviceUtils.isEdgeToEdgeEnabled(context)) {
+             prefScreen.removePreference(mButtonsPref);
+         }
+     }
     
     @Override
      public void onViewCreated(View view, Bundle savedInstanceState) {
