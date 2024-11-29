@@ -60,12 +60,12 @@
              android:title="@string/dw_wallpaper_enabled_title"
              android:summary="@string/dw_wallpaper_enabled_summary"
              android:fragment="com.epic.settings.fragments.lockscreen.WallpaperDepth" />
-
-        <com.epic.settings.preferences.SystemSettingSwitchPreference
-            android:key="lockscreen_show_carrier"
-            android:title="@string/status_bar_carrier_lock_screen_title"
-            android:summary="@string/status_bar_carrier_lock_screen_summary"
-            android:defaultValue="true" />
+             
+       <Preference
+             android:key="peek_display"
+             android:title="@string/peek_display_notifications_title"
+             android:summary="@string/peek_display_notifications_summary"
+             android:fragment="com.epic.settings.fragments.lockscreen.PeekDisplay" />
 
         <com.epic.settings.preferences.SystemSettingSwitchPreference
             android:key="ls_media_art_enabled"
@@ -105,7 +105,12 @@
             android:summary="@string/lock_screen_pulse_settings_summary"
             android:fragment="com.epic.settings.fragments.lockscreen.PulseSettings" />
     </PreferenceCategory>
-
+    
+    <com.epic.settings.preferences.SystemSettingSwitchPreference
+             android:key="lockscreen_show_carrier"
+             android:title="@string/status_bar_carrier_lock_screen_title"
+             android:summary="@string/status_bar_carrier_lock_screen_summary"
+             android:defaultValue="true" />
     <PreferenceCategory
         android:key="lockscreen_weather_category"
         android:title="@string/lockscreen_weather_category">
